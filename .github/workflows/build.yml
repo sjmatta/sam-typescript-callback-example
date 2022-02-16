@@ -5,19 +5,21 @@ name: Node.js CI
 
 on:
     push:
-        branches: [ $default-branch ]
+        branches: [ main ]
     pull_request:
-        branches: [ $default-branch ]
+        branches: [ main ]
 
 jobs:
     build:
+        defaults:
+            run:
+                working-directory: functions
 
         runs-on: ubuntu-latest
 
         strategy:
             matrix:
                 node-version: [14.x, 16.x]
-                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
         steps:
             - uses: actions/checkout@v2
@@ -26,6 +28,6 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
-            - run: cd functions
+                  cache-dependency-path: functions/package-lock.json
             - run: npm ci
             - run: npm run compile --if-present
