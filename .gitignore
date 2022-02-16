@@ -78,3 +78,4 @@ fabric.properties
 
 # SAM
 .aws-sam/
+!/functions/build/

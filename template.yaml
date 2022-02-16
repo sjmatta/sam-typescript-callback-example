@@ -1,24 +1,21 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-    loop-app
+    ts-loop-app
 
-# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
     Function:
         Timeout: 20
-        Runtime: java11
-        MemorySize: 512
+        Runtime: nodejs14.x
+        MemorySize: 128
         CodeUri: functions/
 
 Resources:
 
-    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-
     LoopWorkflowTriggerFunction:
         Type: AWS::Serverless::Function
         Properties:
-            Handler: com.stephenmatta.workflow.trigger.TriggerRequestHandler::handleRequest
+            Handler: build/trigger.lambdaHandler
             Policies:
                 -   StepFunctionsExecutionPolicy:
                         StateMachineName: !GetAtt LoopWorkflow.Name
@@ -29,12 +26,12 @@ Resources:
     LoopFirstWorkflowFunction:
         Type: AWS::Serverless::Function
         Properties:
-            Handler: com.stephenmatta.workflow.firststep.FirstWorkflowHandler::handleRequest
+            Handler: build/first.lambdaHandler
 
     InvokeAsyncApiFunction:
         Type: AWS::Serverless::Function
         Properties:
-            Handler: com.stephenmatta.workflow.apiclient.InvokeAsyncApiHandler::handleRequest
+            Handler: build/invoke.lambdaHandler
             Environment:
                 Variables:
                     LAMBDA_FUNCTION: !Ref AsyncApiFunction
@@ -48,7 +45,7 @@ Resources:
     AsyncApiFunction:
         Type: AWS::Serverless::Function
         Properties:
-            Handler: com.stephenmatta.standalone.asyncapi.AsyncApiHandler::handleRequest
+            Handler: build/asyncapi.lambdaHandler
             Environment:
                 Variables:
                     TOPIC_ARN: !Ref SnsTopicAsyncComplete
@@ -59,7 +56,7 @@ Resources:
     AsyncApiCallbackFunction:
         Type: AWS::Serverless::Function
         Properties:
-            Handler: com.stephenmatta.standalone.asyncapi.callback.AsyncApiCallbackHandler::handleRequest
+            Handler: build/callback.lambdaHandler
             Environment:
                 Variables:
                     TABLE_NAME: !Ref CorrelationTable
@@ -82,7 +79,7 @@ Resources:
                                 - states:SendTaskFailure
                                 - states:SendTaskHeartbeat
                             Resource: !GetAtt LoopWorkflow.Arn
-
+#
     LoopWorkflow:
         Type: AWS::Serverless::StateMachine
         Properties:
@@ -114,12 +111,12 @@ Resources:
                         } ]
                         End: true
 
-            Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
+            Policies:
                 -   LambdaInvokePolicy:
                         FunctionName: !Ref LoopFirstWorkflowFunction
                 -   LambdaInvokePolicy:
                         FunctionName: !Ref InvokeAsyncApiFunction
-
+#
     CorrelationTable:
         Type: AWS::Serverless::SimpleTable
         Properties:
@@ -130,7 +127,7 @@ Resources:
     SnsTopicAsyncComplete:
         Type: AWS::SNS::Topic
         Properties:
-            TopicName: loop-async-complete
+            TopicName: ts-loop-async-complete
             Subscription:
                 -   Protocol: sqs
                     Endpoint: !GetAtt SqsQueueAsyncComplete.Arn
@@ -138,7 +135,7 @@ Resources:
     SqsQueueAsyncComplete:
         Type: AWS::SQS::Queue
         Properties:
-            QueueName: loop-async-complete
+            QueueName: ts-loop-async-complete
 
     # Policy allows SNS to publish to this SQS queue
     SnsToSqsPolicy:
@@ -158,17 +155,3 @@ Resources:
                                 aws:SourceArn: !Ref SnsTopicAsyncComplete
             Queues:
                 -   Ref: SqsQueueAsyncComplete
-
-Outputs:
-    # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
-    # Find out more about other implicit resources you can reference within SAM
-    # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-    #  HelloWorldApi:
-    #    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
-    #    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
-    LoopWorkflowTriggerFunction:
-        Description: "Hello World Lambda Function ARN"
-        Value: !GetAtt LoopWorkflowTriggerFunction.Arn
-    LoopWorkflowTriggerFunctionIamRole:
-        Description: "Implicit IAM Role created for Hello World function"
-        Value: !GetAtt LoopWorkflowTriggerFunction.Arn
