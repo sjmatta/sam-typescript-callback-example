@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/aws-lambda": "8.10.103",
+    "@types/aws-lambda": "8.10.104",
     "@types/node": "17.0.18",
     "@types/uuid": "8.3.4",
     "@typescript-eslint/eslint-plugin": "5.37.0",
