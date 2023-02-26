@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/aws-lambda": "8.10.111",
-    "@types/node": "18.14.1",
+    "@types/node": "18.14.2",
     "@types/uuid": "9.0.1",
     "@typescript-eslint/eslint-plugin": "5.53.0",
     "@typescript-eslint/parser": "5.53.0",
