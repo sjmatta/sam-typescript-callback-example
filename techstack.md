@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 sjmatta/sam-typescript-callback-example is built on the following main stack:
+
 - [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - [TypeScript](http://www.typescriptlang.org) – Languages
@@ -10,11 +11,13 @@ sjmatta/sam-typescript-callback-example is built on the following main stack:
 - [GitHub Actions](https://github.com/features/actions) – Continuous Integration
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 sjmatta/sam-typescript-callback-example is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png' alt='Node.js'/> [Node.js](http://nodejs.org/) – Frameworks (Full Stack)
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/1612/bynNY5dJ.jpg' alt='TypeScript'/> [TypeScript](http://www.typescriptlang.org) – Languages
@@ -23,14 +26,15 @@ sjmatta/sam-typescript-callback-example is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/11563/actions.png' alt='GitHub Actions'/> [GitHub Actions](https://github.com/features/actions) – Continuous Integration
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [sjmatta/sam-typescript-callback-example](https://github.com/sjmatta/sam-typescript-callback-example)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|17<br/>Tools used|11/09/23 <br/>Report generated|
+|17<br/>Tools used|12/14/23 <br/>Report generated|
 |------|------|
 </div>
 
@@ -125,17 +129,17 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[@types/aws-lambda](https://www.npmjs.com/@types/aws-lambda)|v8.10.126|11/07/23|renovate[bot] |MIT|N/A|
-|[@types/node](https://www.npmjs.com/@types/node)|v20.9.0|11/07/23|renovate[bot] |MIT|N/A|
-|[@types/uuid](https://www.npmjs.com/@types/uuid)|v9.0.7|11/07/23|renovate[bot] |MIT|N/A|
-|[@typescript-eslint/eslint-plugin](https://www.npmjs.com/@typescript-eslint/eslint-plugin)|v6.10.0|11/07/23|renovate[bot] |MIT|N/A|
-|[@typescript-eslint/parser](https://www.npmjs.com/@typescript-eslint/parser)|v6.10.0|11/07/23|renovate[bot] |BSD-2-Clause|N/A|
-|[aws-sdk](https://www.npmjs.com/aws-sdk)|v2.1492.0|11/07/23|renovate[bot] |Apache-2.0|N/A|
-|[eslint-config-airbnb-base](https://www.npmjs.com/eslint-config-airbnb-base)|v15.0.0|11/06/23|renovate[bot] |MIT|N/A|
-|[eslint-plugin-import](https://www.npmjs.com/eslint-plugin-import)|v2.29.0|11/06/23|renovate[bot] |MIT|N/A|
+|[@types/aws-lambda](https://www.npmjs.com/@types/aws-lambda)|v8.10.130|12/12/23|renovate[bot] |MIT|N/A|
+|[@types/node](https://www.npmjs.com/@types/node)|v20.10.4|12/12/23|renovate[bot] |MIT|N/A|
+|[@types/uuid](https://www.npmjs.com/@types/uuid)|v9.0.7|12/12/23|renovate[bot] |MIT|N/A|
+|[@typescript-eslint/eslint-plugin](https://www.npmjs.com/@typescript-eslint/eslint-plugin)|v6.14.0|12/12/23|renovate[bot] |MIT|N/A|
+|[@typescript-eslint/parser](https://www.npmjs.com/@typescript-eslint/parser)|v6.14.0|12/12/23|renovate[bot] |BSD-2-Clause|N/A|
+|[aws-sdk](https://www.npmjs.com/aws-sdk)|v2.1518.0|11/30/23|renovate[bot] |Apache-2.0|N/A|
+|[eslint-config-airbnb-base](https://www.npmjs.com/eslint-config-airbnb-base)|v15.0.0|12/12/23|renovate[bot] |MIT|N/A|
+|[eslint-plugin-import](https://www.npmjs.com/eslint-plugin-import)|v2.29.0|12/12/23|renovate[bot] |MIT|N/A|
 |[uuid](https://www.npmjs.com/uuid)|v8.0.0|11/07/23|renovate[bot] |MIT|N/A|
 
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
