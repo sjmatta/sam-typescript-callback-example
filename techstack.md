@@ -34,7 +34,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [sjmatta/sam-typescript-callback-example](https://github.com/sjmatta/sam-typescript-callback-example)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|17<br/>Tools used|12/14/23 <br/>Report generated|
+|17<br/>Tools used|01/11/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -129,14 +129,14 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[@types/aws-lambda](https://www.npmjs.com/@types/aws-lambda)|v8.10.130|12/12/23|renovate[bot] |MIT|N/A|
-|[@types/node](https://www.npmjs.com/@types/node)|v20.10.4|12/12/23|renovate[bot] |MIT|N/A|
-|[@types/uuid](https://www.npmjs.com/@types/uuid)|v9.0.7|12/12/23|renovate[bot] |MIT|N/A|
-|[@typescript-eslint/eslint-plugin](https://www.npmjs.com/@typescript-eslint/eslint-plugin)|v6.14.0|12/12/23|renovate[bot] |MIT|N/A|
-|[@typescript-eslint/parser](https://www.npmjs.com/@typescript-eslint/parser)|v6.14.0|12/12/23|renovate[bot] |BSD-2-Clause|N/A|
-|[aws-sdk](https://www.npmjs.com/aws-sdk)|v2.1518.0|11/30/23|renovate[bot] |Apache-2.0|N/A|
-|[eslint-config-airbnb-base](https://www.npmjs.com/eslint-config-airbnb-base)|v15.0.0|12/12/23|renovate[bot] |MIT|N/A|
-|[eslint-plugin-import](https://www.npmjs.com/eslint-plugin-import)|v2.29.0|12/12/23|renovate[bot] |MIT|N/A|
+|[@types/aws-lambda](https://www.npmjs.com/@types/aws-lambda)|v8.10.131|01/11/24|renovate[bot] |MIT|N/A|
+|[@types/node](https://www.npmjs.com/@types/node)|v20.11.0|01/11/24|renovate[bot] |MIT|N/A|
+|[@types/uuid](https://www.npmjs.com/@types/uuid)|v9.0.7|01/11/24|renovate[bot] |MIT|N/A|
+|[@typescript-eslint/eslint-plugin](https://www.npmjs.com/@typescript-eslint/eslint-plugin)|v6.18.1|01/11/24|renovate[bot] |MIT|N/A|
+|[@typescript-eslint/parser](https://www.npmjs.com/@typescript-eslint/parser)|v6.18.1|01/11/24|renovate[bot] |BSD-2-Clause|N/A|
+|[aws-sdk](https://www.npmjs.com/aws-sdk)|v2.1533.0|01/04/24|renovate[bot] |Apache-2.0|N/A|
+|[eslint-config-airbnb-base](https://www.npmjs.com/eslint-config-airbnb-base)|v15.0.0|01/09/24|renovate[bot] |MIT|N/A|
+|[eslint-plugin-import](https://www.npmjs.com/eslint-plugin-import)|v2.29.1|01/09/24|renovate[bot] |MIT|N/A|
 |[uuid](https://www.npmjs.com/uuid)|v8.0.0|11/07/23|renovate[bot] |MIT|N/A|
 
 <br/>
