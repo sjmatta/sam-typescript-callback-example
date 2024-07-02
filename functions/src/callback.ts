@@ -1,10 +1,22 @@
 import { APIGatewayProxyResult, SQSEvent, SQSRecord } from 'aws-lambda';
 import { DynamoDB, StepFunctions } from 'aws-sdk';
 
-// eslint-disable-next-line import/prefer-default-export
+interface Message {
+  correlationId: string
+}
+
+interface SQSRecordBody {
+  Message: string
+}
+
+const getBodyMessage = (record: SQSRecord): Message => {
+  const body = JSON.parse(record.body) as SQSRecordBody;
+  return JSON.parse(body.Message) as Message;
+}
+
 export const lambdaHandler = async (event: SQSEvent): Promise<APIGatewayProxyResult> => {
   await Promise.all(event.Records.map((record: SQSRecord) => {
-    const { correlationId } = JSON.parse(JSON.parse(record.body).Message);
+    const { correlationId } = getBodyMessage(record);
     return new DynamoDB().getItem({
       TableName: process.env.TABLE_NAME,
       Key: { correlationId: { S: correlationId } },

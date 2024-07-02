@@ -5,7 +5,6 @@ interface InvokeEvent {
   correlationId: string
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export const lambdaHandler = async (event: InvokeEvent): Promise<APIGatewayProxyResult> => {
   const { correlationId } = event;
   const topicArn = process.env.TOPIC_ARN;
