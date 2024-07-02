@@ -28,7 +28,6 @@ const invokeLambdaFunction = (
   Payload: JSON.stringify({ correlationId }),
 }).promise();
 
-// eslint-disable-next-line import/prefer-default-export
 export const lambdaHandler = async (event: InvokeEvent): Promise<APIGatewayProxyResult> => {
   const tableName: string = process.env.TABLE_NAME;
   const correlationId: string = uuidv4();

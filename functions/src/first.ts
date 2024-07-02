@@ -1,8 +1,8 @@
 import {APIGatewayProxyResult} from "aws-lambda";
 
 export const lambdaHandler = async (): Promise<APIGatewayProxyResult> => {
-    return {
+    return Promise.resolve({
         statusCode: 200,
         body: `sample data`
-    }
+    });
 }
