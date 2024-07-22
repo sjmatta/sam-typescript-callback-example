@@ -123,8 +123,6 @@ Resources:
             AttributeDefinitions:
                 - AttributeName: correlationId
                   AttributeType: S
-                - AttributeName: expirationTime
-                  AttributeType: N
             KeySchema:
                 - AttributeName: correlationId
                   KeyType: HASH
