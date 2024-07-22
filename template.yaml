@@ -108,7 +108,7 @@ Resources:
                             IntervalSeconds: 2,
                             MaxAttempts: 6,
                             BackoffRate: 2
-                        } ]
+                         } ]
                         End: true
 
             Policies:
@@ -116,13 +116,22 @@ Resources:
                         FunctionName: !Ref LoopFirstWorkflowFunction
                 -   LambdaInvokePolicy:
                         FunctionName: !Ref InvokeAsyncApiFunction
-#
+
     CorrelationTable:
-        Type: AWS::Serverless::SimpleTable
+        Type: AWS::DynamoDB::Table
         Properties:
-            PrimaryKey:
-                Name: correlationId
-                Type: String
+            AttributeDefinitions:
+                - AttributeName: correlationId
+                  AttributeType: S
+                - AttributeName: expirationTime
+                  AttributeType: N
+            KeySchema:
+                - AttributeName: correlationId
+                  KeyType: HASH
+            BillingMode: PAY_PER_REQUEST
+            TimeToLiveSpecification:
+                AttributeName: expirationTime
+                Enabled: true
 
     SnsTopicAsyncComplete:
         Type: AWS::SNS::Topic
