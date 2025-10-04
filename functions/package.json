@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.6.0",
-    "@types/aws-lambda": "8.10.153",
+    "@types/aws-lambda": "8.10.155",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "20.19.19",
     "@types/uuid": "10.0.0",
